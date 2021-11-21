@@ -1,6 +1,6 @@
 # `Portfolio`
 
-### `Yarn install`
+### `yarn install`
 
 This installs all the dependancies to be able to run locally. Do this before running yarn start. 
 

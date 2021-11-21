@@ -10,22 +10,65 @@ import {
   FileOutlined,
   UserOutlined,
 } from '@ant-design/icons';
+import Graduation from './assets/images/High_DM04127-011.jpg';
+import DopeBoat from './assets/images/20181231-DSC_0029.jpg';
+import { List, Divider } from 'antd';
 
+
+const data = [
+  'I am 22',
+  'I am currently completing my honours degree at Tuks in Informatics',
+  'My goal in life is to be happy and make others happy too',
+  'My mantra is to never run away from a challenge',
+  'I am a twin, and my star sign is Gemini',
+  'In my spare time I am an avid gymer, adrenaline seeker and explorer',
+  'I am a photographer, shooting on film and digital cameras'
+];
 
 function AboutMe() {
   return(
-    <div>
-      <h1>Hello</h1>
+    <div className='center'>
+      <div className='head'>
+        <label id="heading">About Me</label>
+        <img src={Graduation} alt="me" id="photo"/>
+      </div>
+      <div className='info'>
+        <label id="h2">My name is Kyle Drotsky</label>
+        <Divider orientation="center">Facts</Divider>
+        <List
+          id="list"
+          size="small"
+          bordered
+          dataSource={data}
+          renderItem={item => <List.Item>{item}</List.Item>}
+        />
+        <div style={{display:'flex', flexDirection:'row', justifyContent:'center'}}>
+          <img src={DopeBoat} id='DopeBoat' alt='DopeBoat'/>
+        </div>
+      </div>
     </div>
   )
 }
 function Motivations() {
-  return <div>Motivations</div>;
+  return (
+    <div>
+      <div id="links">Links to all my Socials</div>
+      <link href='https://drive.google.com/file/d/1kGj0JvXnX4cnGDySVDsqsUqq28olUVdv/view'>Resume</link>
+      <link>LinkedIn</link>
+      <link>Website</link>
+      <link>Portfolio</link>
+    </div>
+  )
 }
 
 function Files(){
-  return <div>Files</div>;
+  return (
+    <div>
+      <div></div>
+    </div>
+  )
 }
+
 
 const { Header, Content, Footer, Sider } = Layout;
 

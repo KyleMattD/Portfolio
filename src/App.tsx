@@ -12,9 +12,11 @@ import {
 } from '@ant-design/icons';
 import Graduation from './assets/images/High_DM04127-011.jpg';
 import DopeBoat from './assets/images/20181231-DSC_0029.jpg';
+import NC from './assets/images/_MG_7001 copy.jpeg';
+import LH from './assets/images/DSC08855-3 copy.jpg';
 import { List, Divider } from 'antd';
 
-
+//data for the list in aboutme
 const data = [
   'I am 22',
   'I am currently completing my honours degree at Tuks in Informatics',
@@ -25,6 +27,18 @@ const data = [
   'I am a photographer, shooting on film and digital cameras'
 ];
 
+// data for the list in my motivations
+const Data = [
+  'Great values, which I align with and agree with wholeheartedly', 
+  'The company works in multiple industries, giving employees exposure to many opportunities',
+  'Big clients which is great to see',
+  'I did some research and SovTech is one of the best development companies in the country',
+  'Many streams of development and design',
+  'International relocation opportunities',
+  'Incredibly friendly people'
+];
+
+//about me 
 function AboutMe() {
   return(
     <div className='center'>
@@ -49,27 +63,53 @@ function AboutMe() {
     </div>
   )
 }
+// motivation as to why i want to work at sovtech
 function Motivations() {
   return (
-    <div>
-      <div id="links">Links to all my Socials</div>
-      <link href='https://drive.google.com/file/d/1kGj0JvXnX4cnGDySVDsqsUqq28olUVdv/view'>Resume</link>
-      <link>LinkedIn</link>
-      <link>Website</link>
-      <link>Portfolio</link>
+    <div className='center'>
+      <label id="motivation">Why Do I want to Work at SovTech?</label>
+      <div id="para">
+        <p id='p1'>SovTech has been on my radar for quite some time now.
+        While I have been busy with my honours I have been working part time as a Software Engineer for a startup and it
+        has been an experience. I was thrown into the deepend and I had to sink or swim, and so I swam as best as I could.  
+        </p>
+        <p>
+          I want to work for a bigger company, where I know I will learn from the best in industry 
+          and gain knowledge that I would not otherwise have access to. I also want a mentor that can help me become more confident in my abilities as a programmer. 
+        </p>
+        <Divider orientation="center">Reasons why I choose SovTech</Divider>
+        <List
+          id="list"
+          size="small"
+          bordered
+          dataSource={Data}
+          renderItem={item => <List.Item>{item}</List.Item>}
+        />
+      </div>
     </div>
   )
 }
-
+// shows all my socials 
 function Files(){
   return (
-    <div>
-      <div></div>
+    <div className='center'>
+      <div id="links">
+        <label className='link'>Links to all my Socials</label>
+        <label id='social'>Feel free to checkout my socials if you need any more information</label>
+        <a href='https://drive.google.com/file/d/1kGj0JvXnX4cnGDySVDsqsUqq28olUVdv/view'>Resume</a>
+        <a href='https://www.linkedin.com/in/kyle-drotsky-18ab62197/'>LinkedIn</a>
+        <a href='https://kyledrotsky555.wixsite.com/weasleyswonders'>Photography Website</a>
+        <a href='https://kyledrotsky555.wixsite.com/portfolio'>Design Portfolio</a>
+      </div>
+      <div style={{display:'flex', paddingTop:50}}>
+        <img src={NC} id='NC' alt='NC'/>
+        <img src={LH} id='LH' alt='LH'/>
+      </div>
     </div>
   )
 }
 
-
+// component to render all the other functions
 const { Header, Content, Footer, Sider } = Layout;
 
 class App extends Component {

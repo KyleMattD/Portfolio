@@ -26,5 +26,5 @@ Your app is ready to be deployed!
 
 ## `Hosted site`
 
-https://romantic-sammet-f0a0f4.netlify.app
+https://sovtech-motivations.netlify.app
 
